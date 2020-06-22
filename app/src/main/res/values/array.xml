@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sptype">
+        <item>InfoData</item>
+        <item>AccData</item>
+        <item>GyrData</item>
+        <item>MagData</item>
+        <item>AccDataX</item>
+        <item>AccDataY</item>
+        <item>AccDataZ</item>
+        <item>GyrDataX</item>
+        <item>GyrDataY</item>
+        <item>GyrDataZ</item>
+        <item>MagDataX</item>
+        <item>MagDataY</item>
+        <item>MagDataZ</item>
+        <item>RotDataX</item>
+        <item>RotDataY</item>
+        <item>RotDataZ</item>
+    </string-array>
+
+    <string-array name="sensor_type">
+        <item>Acc</item>
+        <item>Gyr</item>
+        <item>Mag</item>
+        <item>Rot</item>
+    </string-array>
+
+    <string-array name="sensor_delay">
+        <item>NORMAL</item>
+        <item>UI</item>
+        <item>GAME</item>
+        <item>FASTEST</item>
+    </string-array>
+
+    <string-array name="sensor_dimension">
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
+</resources>
