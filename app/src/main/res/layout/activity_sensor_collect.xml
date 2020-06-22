@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SensorCollectActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="传感器采集"
+                android:textSize="24sp" />
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:focusable="true"
+                android:textColor="#ff0303"
+                android:textSize="12pt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sensordelayTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sensor_delay"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/delaySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/sensor_delay" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sensorOper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/sensor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="启动传感器"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recordOper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/button_circle_shape"
+                    android:gravity="center"
+                    android:text="开始记录"
+                    android:textAllCaps="false"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_topline"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/uidText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UID："
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/uidSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/EndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EndTime："
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/ETtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/StartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="StartTime："
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/STtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TimeSpan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TimeSpan:"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/TimeSpantext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TimeStamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TimeStamp："
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/TimeStamptext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_topline"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sensor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="加速度"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Xtext1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ytext1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Y : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ztext1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Z : "
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/aX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="a'X"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/aY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="a'Y"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/aZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="a'Z"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_topline"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sensor2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="地磁    "
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Xtext2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ytext2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Y : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ztext2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Z : "
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/mX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="m'X"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/mY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="m'Y"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/mZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="m'Z"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_topline"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sensor4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="陀螺仪"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Xtext4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ytext4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Y : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ztext4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Z : "
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/gX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="g‘X"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/gY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="g'Y"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/gZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="g'X"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_topline"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/sensor3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="方向    "
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Xtext3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ytext3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Y : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ztext3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Z : "
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/oX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="o'X"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/oY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="o'Y"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/oZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="o'Z"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/oX2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/oY2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/oZ2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_topline"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sensor5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="旋转    \n向量"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Xtext5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ytext5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Y : "
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Ztext5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Z : "
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="r'X"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/rY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="r'Y"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/rZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="r'Z"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/rr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="r'r"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
